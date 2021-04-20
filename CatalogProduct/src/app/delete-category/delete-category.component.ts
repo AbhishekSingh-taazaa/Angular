@@ -1,14 +1,13 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataSharingServiceService } from '../data-sharing-service.service';
 
-
 @Component({
-  selector: 'app-delete-product',
-  templateUrl: './delete-product.component.html',
-  styleUrls: ['./delete-product.component.css']
+  selector: 'app-delete-category',
+  templateUrl: './delete-category.component.html',
+  styleUrls: ['./delete-category.component.css']
 })
-export class DeleteProductComponent implements OnInit {
+export class DeleteCategoryComponent implements OnInit {
 
   constructor(private dataservices : DataSharingServiceService) { }
 
@@ -48,26 +47,26 @@ export class DeleteProductComponent implements OnInit {
   DeleteControl = new FormControl('', Validators.required);
   selectFormControl = new FormControl('', Validators.required);
 
-  DeleteById: FormGroup = new FormGroup({
-    Id: new FormControl(null, [Validators.required])
+  DeleteByCId: FormGroup = new FormGroup({
+    CId: new FormControl(null, [Validators.required])
   });
 
-  DeleteByName: FormGroup = new FormGroup({
-    Name: new FormControl(null, [Validators.required])
+  DeleteByCName: FormGroup = new FormGroup({
+    CName: new FormControl(null, [Validators.required])
   });
 
-  DeleteByShortCode: FormGroup = new FormGroup({
-    ShortCode: new FormControl(null, [Validators.required])
+  DeleteByCShortCode: FormGroup = new FormGroup({
+    CShortCode: new FormControl(null, [Validators.required])
   });
 
   DeleteOperations: string[] = ["Delete By Id", "Delete By Name", "Delete By Short Code",];
-  DeleteByProdName(): void {
-    this.dataservices.RemoveByName(this.DeleteByName.get('Name')?.value);
+  DeleteByCateName(): void {
+    this.dataservices.RemoveByCategoryName(this.DeleteByCName.get('CName')?.value);
   }
-  DeleteByProdId():void{
-    this.dataservices.RemoveById(this.DeleteById.get('Id')?.value);
+  DeleteByCateId():void{
+    this.dataservices.RemoveByCategoryId(this.DeleteByCId.get('CId')?.value);
   }
-  DeleteByProdShortCode():void{
-    this.dataservices.RemoveByShortCode(this.DeleteByShortCode.get('ShortCode')?.value);
+  DeleteByCateShortCode():void{
+    this.dataservices.RemoveByCategoryShortCode(this.DeleteByCShortCode.get('CShortCode')?.value);
   }
 }

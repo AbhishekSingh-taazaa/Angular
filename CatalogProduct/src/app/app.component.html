@@ -6,6 +6,8 @@
    
     <span class="menu-spacer"></span>
     <div>
+
+      <a mat-button [routerLink]="'/Home'">Home </a>
       <a mat-button [routerLink]="'/Category'">Category </a>
       <a mat-button [routerLink]="'/Product'"> Product </a>
      
@@ -30,7 +32,6 @@
 <!-- <mat-sidenav-container>
   <mat-sidenav #sidenav mode="side">
     <mat-nav-list>
-
      
       <a mat-list-item [routerLink]="'/create-account'"> Create Account </a>
       <a mat-list-item [routerLink]="'/contacts'"> Contacts </a>
@@ -38,12 +39,10 @@
       <a mat-list-item [routerLink]="'/activities'"> Activities </a>
       <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-
     </mat-nav-list>
   </mat-sidenav> -->
   <!-- <mat-sidenav-content>
     <div style="height: 88vh;">
-
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
@@ -62,28 +61,20 @@
         <span *ngIf="isExpanded">Home</span>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'Login'">
-       Login  <mat-icon mat-list-icon>login</mat-icon>
+      <mat-list-item [routerLink]="'/Category'">
+       Category  <mat-icon mat-list-icon>login</mat-icon>
         <span *ngIf="isExpanded">Login</span>
       </mat-list-item>
 
-      <mat-list-item [routerLink]="'Signup'">
-        SignUp
+      <mat-list-item [routerLink]="'/Product'">
+        Product
         <mat-icon mat-list-icon>face</mat-icon>
         <span *ngIf="isExpanded">Signup</span>
       </mat-list-item>
-      <mat-list-item [routerLink]="'Context'">
-        Info
-        <mat-icon mat-list-icon>
-          contact_support
-          </mat-icon>
-        <span *ngIf="isExpanded">Contact Support</span>
-      </mat-list-item>
+     
 
     </mat-nav-list>
   </mat-sidenav>
 
   <router-outlet></router-outlet>
 
-
- 

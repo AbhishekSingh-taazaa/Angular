@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSharingServiceService } from '../data-sharing-service.service';
+import { Iproduct } from '../product/IProduct';
 
 @Component({
   selector: 'app-search-product',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchProductComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private datasharingservice:DataSharingServiceService) { }
+  AllProductsSearch:Iproduct[]= this.datasharingservice.products;
   ngOnInit(): void {
   }
+  displayedColumns: string[] = ['ID', 'NAME', 'MANUFACTURER',  'SHORTCODE','CATEGORY','SELLINGPRICE' ];
+  
+  id:number;
+  name:string;
+  pricegreaterthan:number;
+  pricelessthan :number;
+  priceequalto :number;
 
 }
