@@ -11,6 +11,7 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(private datasharingservice : DataSharingServiceService) { }
   EnterCategoryForm :FormGroup
+  
   updatecategory(){
     console.log(this.EnterCategoryForm.value);
     this.datasharingservice.updatecategories(this.EnterCategoryForm.value);

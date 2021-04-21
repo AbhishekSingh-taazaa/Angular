@@ -80,9 +80,26 @@ export class DataSharingServiceService {
     CDescription: "Study",
     CShortCode:"stud"
   },
-  ]
+  ];
+
+  checkingCatogiry:boolean=false;
   updateproducts(p:Iproduct){
-  this.products.push(p);  
+  this.categories.forEach(cata => {
+   if( cata.CName!==p.Category)
+   {
+     this.checkingCatogiry=true;
+   }
+
+  });
+  if(this.checkingCatogiry===true)
+  {
+    this.products.push(p);
+    alert("This category is not avaliable please add this category after OK.");
+  }
+  else{
+
+    this.products.push(p);  
+  }
   }
   updatecategories(c:Icategory){
     this.categories.push(c);  
@@ -112,14 +129,18 @@ export class DataSharingServiceService {
   {
     console.log(cid);
     this.categories.forEach((value,index)=>{
-      if(value.CId == cid) this.categories.splice(index,1);
+      if(value.CId == cid){
+        this.categories.splice(index,1);
+      };
     });
   }
   RemoveByCategoryName(cname:string)
   {
     console.log(cname);
     this.categories.forEach((value,index)=>{
-      if(value.CName == cname) this.categories.splice(index,1);
+      if(value.CName == cname) {
+        this.products.splice(index,1);
+        this.categories.splice(index,1)};
     });
   }
   RemoveByCategoryShortCode(cshortcode:string)
@@ -127,6 +148,27 @@ export class DataSharingServiceService {
     console.log(cshortcode);
     this.categories.forEach((value,index)=>{
       if(value.CShortCode == cshortcode) this.categories.splice(index,1);
+    });
+  }
+  RemoveProductByCategoryName(cname:string)
+  {
+    console.log(cname);
+    this.products.forEach((value,index)=>{
+      if(value.Category == cname) this.products.splice(index,1);
+    });
+  }
+  RemoveProductByCategoryId(cid:number)
+  {
+    console.log(cid);
+    this.products.forEach((value,index)=>{
+      if(value.Id == cid) this.products.splice(index,1);
+    });
+  }
+  RemoveProductByCategoryShortCode(cshortcode:string)
+  {
+    console.log(cshortcode);
+    this.products.forEach((value,index)=>{
+      if(value.ShortCode == cshortcode) this.products.splice(index,1);
     });
   }
 }

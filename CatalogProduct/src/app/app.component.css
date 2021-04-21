@@ -46,6 +46,15 @@
     opacity: 0.8;
   } */
 
+  a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+  .toolbar {
+    background-color: #138d5a;
+    color: white;
+    font-weight: 600;
+  }
   mat-sidenav-container {
     height: 100%;
   }
@@ -71,5 +80,10 @@
   #spanwelcome
   {
       margin: 0 300px;
+  }
+
+  #flexpend
+  {
+    margin: 0 130px;
   }
   
