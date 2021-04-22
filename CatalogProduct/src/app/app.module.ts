@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -84,7 +86,9 @@ import { HomeComponent } from './home/home.component';
     MatCheckboxModule,
     MatSelectModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule,
+    MatMenuModule
     
   ],
   providers: [],

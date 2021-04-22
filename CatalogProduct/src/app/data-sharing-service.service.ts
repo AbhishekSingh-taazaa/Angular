@@ -82,7 +82,7 @@ export class DataSharingServiceService {
   },
   ];
 
-  checkingCatogiry:boolean=false;
+   checkingCatogiry:boolean=false;
   updateproducts(p:Iproduct){
   this.categories.forEach(cata => {
    if( cata.CName!==p.Category)
@@ -129,18 +129,14 @@ export class DataSharingServiceService {
   {
     console.log(cid);
     this.categories.forEach((value,index)=>{
-      if(value.CId == cid){
-        this.categories.splice(index,1);
-      };
+      if(value.CId == cid) this.categories.splice(index,1);
     });
   }
   RemoveByCategoryName(cname:string)
   {
     console.log(cname);
     this.categories.forEach((value,index)=>{
-      if(value.CName == cname) {
-        this.products.splice(index,1);
-        this.categories.splice(index,1)};
+      if(value.CName == cname) this.categories.splice(index,1);
     });
   }
   RemoveByCategoryShortCode(cshortcode:string)

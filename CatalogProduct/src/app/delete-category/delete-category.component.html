@@ -23,7 +23,7 @@
       <input formControlName='CId' type="number" class="form-control"  >
       </div>     
       <br>
-      <button (click)="DeleteByCateId()"class="btn btn-info">Delete</button>       
+      <button (click)="DeleteByCateId()" mat-raised-button color="warn">Delete</button>       
       </form> 
    
       <form  *ngIf=showname [formGroup]='DeleteByCName' novalidate class="form">
@@ -36,7 +36,7 @@
               >
               </div>   
               <br>
-              <button (click)="DeleteByCateName()"class="btn btn-info">Delete</button>             
+              <button (click)="DeleteByCateName()" mat-raised-button color="primary">Delete</button>             
               </form> 
    
               <form  *ngIf=showshortcode [formGroup]='DeleteByCShortCode' novalidate class="form">
@@ -49,7 +49,7 @@
                       >
                       </div>  
                       <br>
-                      <button (click)="DeleteByCateShortCode()"class="btn btn-info">Delete</button>              
+                      <button (click)="DeleteByCateShortCode()"mat-raised-button color="accent">Delete</button>              
                       </form> 
             
                   </div>

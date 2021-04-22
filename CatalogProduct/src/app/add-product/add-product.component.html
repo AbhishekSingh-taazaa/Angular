@@ -28,8 +28,8 @@
                    *ngIf="!EnterProductForm?.get('SellingPrice')?.valid && EnterProductForm?.get('SellingPrice')?.touched">SellingPrice Required</div><br><br>
                      
                     <br>
-                    <button type="submit" [disabled]="EnterProductForm.invalid" class="btn btn-info">Update Product List</button>
-                        <button type="button" (click)='reset()' class="btn btn-danger">Reset Form</button>
+                    <button  mat-raised-button color="primary" type="submit" [disabled]="EnterProductForm.invalid" >Update Product List</button>
+                    &nbsp;&nbsp;<button  mat-raised-button color="accent" type="button" (click)='reset()' >Reset Form</button>
                 </form>
                 
             <br>                 </div>

@@ -11,6 +11,8 @@ export class ListProductComponent implements OnInit {
 
   constructor(private datasharingservice : DataSharingServiceService) { }
   AllProducts:Iproduct[]= this.datasharingservice.products;
+  displayedColumns: string[] = ['ID', 'NAME', 'MANUFACTURER',  'SHORTCODE','CATEGORY','SELLINGPRICE' ];
+  
   ngOnInit(): void {
   }
 

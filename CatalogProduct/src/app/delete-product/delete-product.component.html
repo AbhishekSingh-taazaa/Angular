@@ -23,7 +23,7 @@
     <input formControlName='Id' type="number" class="form-control"  >
     </div>     
     <br>
-    <button (click)="DeleteByProdId()"class="btn btn-info">Delete</button>       
+    <button (click)="DeleteByProdId()" mat-raised-button color="warn">Delete</button>       
     </form> 
  
     <form  *ngIf=showname [formGroup]='DeleteByName' novalidate class="form">
@@ -36,7 +36,7 @@
             >
             </div>   
             <br>
-            <button (click)="DeleteByProdName()"class="btn btn-info">Delete</button>             
+            <button (click)="DeleteByProdName()" mat-raised-button color="warn">Delete</button>             
             </form> 
  
             <form  *ngIf=showshortcode [formGroup]='DeleteByShortCode' novalidate class="form">
@@ -49,7 +49,7 @@
                     >
                     </div>  
                     <br>
-                    <button (click)="DeleteByProdShortCode()"class="btn btn-info">Delete</button>              
+                    <button (click)="DeleteByProdShortCode()" mat-raised-button color="warn">Delete</button>              
                     </form> 
           
                 </div>

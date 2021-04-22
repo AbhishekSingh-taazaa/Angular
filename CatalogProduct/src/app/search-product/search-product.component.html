@@ -28,7 +28,7 @@
         Enter Price : <input type="number" placeholder="Price Equal To" [(ngModel)]="priceequalto">
     </div>
 </div>
-<div>
+<!-- <div>
     <hr class="my-4">
     <div class="text-center">
         <table class="table table-dark">
@@ -57,12 +57,15 @@
             </tbody>
         </table>
     </div>
-</div>
+</div> -->
 
 
-<!-- 
+
+<br><br>
+
+
 <div class="col-md-12">
-    <table mat-table [dataSource]="AllProductsSearch" class="mat-elevation-z8">
+    <table mat-table [dataSource]="AllProductsSearch |byId:id|byName:name|byPriceEqualTo:priceequalto|byPriceGreaterThan:pricegreaterthan|byPriceLessThan:pricelessthan" class="mat-elevation-z8">
         <ng-container matColumnDef="ID">
             <th mat-header-cell *matHeaderCellDef> ID </th>
             <td mat-cell *matCellDef="let user"> {{user.Id}} </td>
@@ -87,6 +90,6 @@
             <th mat-header-cell *matHeaderCellDef> SELLINGPRICE </th>
             <td mat-cell *matCellDef="let user"> {{user.SellingPrice}} </td>
         </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color: #138d5a; color: aliceblue;"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table> -->
+    </table>

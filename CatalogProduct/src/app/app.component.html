@@ -17,10 +17,10 @@
     </div>
     <span id="spanwelcome">Welcome</span>
     <div class="flexpend"> <span id="flexpend"></span>
-      <button mat-icon-button class="example-icon favorite-icon" > <mat-icon>favorite</mat-icon></button>
+      <button mat-icon-button onClick="window.open('//www.linkedin.com/in/abhi0212')"  class="example-icon favorite-icon"> <mat-icon>favorite</mat-icon></button>
        
      
-      <button mat-icon-button class="example-icon" >
+      <button mat-icon-button onClick="window.open('//github.com/AbhishekSingh-taazaa/')" class="example-icon" >
        <mat-icon>share</mat-icon>
      </button>
    </div>
@@ -55,9 +55,34 @@
         <span *ngIf="isExpanded">Signup</span>
       </mat-list-item>
      
+      
+<mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+    <mat-expansion-panel-header>
+      <mat-icon mat-list-icon>category</mat-icon> Caegory 
+    </mat-expansion-panel-header>
+    <mat-nav-list dense>
+       
+        <a mat-list-item routerLink="/Category/AddCategory"><mat-icon>add</mat-icon>Add Category</a>
+        <a mat-list-item routerLink="/Category/SearchCategory"><mat-icon>search</mat-icon>Search Category</a>
+        <a mat-list-item routerLink="/Category/DeleteCategory"><mat-icon>delete</mat-icon>Delete Category</a>
+        <a mat-list-item routerLink="/Category/Allcategory"><mat-icon>menu</mat-icon>All Category</a>
+    </mat-nav-list>
+</mat-expansion-panel>
+
+<mat-expansion-panel [class.mat-elevation-z0]="true" dense>
+  <mat-expansion-panel-header>
+    <mat-icon mat-list-icon>shopping_cart</mat-icon> Products
+  </mat-expansion-panel-header>
+  <mat-nav-list dense>
+    <a mat-list-item routerLink="/Product/AddProduct"><mat-icon>add</mat-icon>Add Product</a>
+    <a mat-list-item routerLink="/Product/SearchProduct"><mat-icon>search</mat-icon>Search Product</a>
+    <a mat-list-item routerLink="/Product/DeleteProduct"><mat-icon>delete</mat-icon>Delete Product</a>
+    <a mat-list-item routerLink="/Product/AllProducts"><mat-icon>menu</mat-icon>All Product</a>
+  </mat-nav-list>
+</mat-expansion-panel>
 
     </mat-nav-list>
   </mat-sidenav>
-
   <router-outlet></router-outlet>
 
+  

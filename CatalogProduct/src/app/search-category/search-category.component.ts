@@ -15,4 +15,7 @@ export class SearchCategoryComponent implements OnInit {
   cid:number;
   cname:string;
 
+  displayedColumns  = ['CID', 'CNAME', 'CDESCRIPTION', 'CSHORTCODE' ];
+
+
 }
